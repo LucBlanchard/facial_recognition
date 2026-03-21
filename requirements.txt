@@ -1,0 +1,28 @@
+# ──────────────────────────────────────────────
+#  API framework
+# ──────────────────────────────────────────────
+fastapi==0.135.1
+uvicorn[standard]==0.42.0
+pydantic==2.12.5
+python-multipart==0.0.22      # ⚠️  REQUIRED — FastAPI will crash at startup without this
+starlette==0.52.1
+
+# ──────────────────────────────────────────────
+#  Deep learning
+#  Pinned to versions that work with facenet-pytorch 2.6.0
+# ──────────────────────────────────────────────
+torch==2.2.2
+torchvision==0.17.2
+
+# ──────────────────────────────────────────────
+#  Computer vision & face models
+# ──────────────────────────────────────────────
+opencv-python-headless==4.10.0.84   # last version compatible with numpy 1.x
+Pillow==10.2.0
+facenet-pytorch==2.6.0
+ultralytics==8.4.21
+
+# ──────────────────────────────────────────────
+#  Numerical
+# ──────────────────────────────────────────────
+numpy==1.26.4
