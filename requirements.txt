@@ -15,6 +15,11 @@ starlette==0.52.1
 torch==2.2.2+cpu
 torchvision==0.17.2+cpu
 
+# ---------------------------------------------
+# ✅ TESTING
+# ---------------------------------------------
+pytest==7.3.1          # Python testing framework — great for writing unit tests for ML pipeline
+
 # ──────────────────────────────────────────────
 #  Computer vision & face models
 # ──────────────────────────────────────────────
