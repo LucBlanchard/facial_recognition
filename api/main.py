@@ -15,8 +15,21 @@ from fastapi.responses import StreamingResponse, HTMLResponse
 from pydantic import BaseModel
 import uvicorn
 
+from prometheus_fastapi_instrumentator import Instrumentator  #   Monitoring
+
 
 app = FastAPI(title="Face Recognition API")
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+# Initialize and instrument Prometheus metrics
+Instrumentator().instrument(app).expose(app)  #    Add this
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -433,4 +446,4 @@ async def compare_faces(
 
 
 if __name__ == "__main__":
-    uvicorn.run("Main_fastapi:app", host="0.0.0.0", port=5000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=5000, reload=True)

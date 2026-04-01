@@ -11,8 +11,9 @@ starlette==0.52.1
 #  Deep learning
 #  Pinned to versions that work with facenet-pytorch 2.6.0
 # ──────────────────────────────────────────────
-torch==2.2.2
-torchvision==0.17.2
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.2.2+cpu
+torchvision==0.17.2+cpu
 
 # ──────────────────────────────────────────────
 #  Computer vision & face models
@@ -26,3 +27,8 @@ ultralytics==8.4.21
 #  Numerical
 # ──────────────────────────────────────────────
 numpy==1.26.4
+
+# ──────────────────────────────────────────────
+#  Monitoring
+# ──────────────────────────────────────────────
+prometheus-fastapi-instrumentator==6.1.0

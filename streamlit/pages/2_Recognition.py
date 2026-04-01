@@ -11,7 +11,7 @@ import os
 
 # Get API endpoint from environment variable or use default
 api_endpoint=os.getenv("API_URL","http://localhost:5000")
-API_URL=api_endpoint.rstrip('/')
+API_URL=api_endpoint.rstrip('/') + '/recognize'
 
 st.set_page_config(page_title="Live Video Feed", layout="centered")
 st.title("Live Video Feed")

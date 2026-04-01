@@ -3,7 +3,7 @@ services:
     build:
       context: .                    # ← root of the project
       dockerfile: Dockerfile        # ← Dockerfile at the root
-    image: face-recognition-api     # ← name of the image
+    image: lucblanchard/face-recognition-api     # ← name of the image
     ports:
       - "5000:5000"
 
@@ -11,7 +11,7 @@ services:
     build:
       context: ./streamlit          # ← streamlit folder is the context
       dockerfile: Dockerfile        # ← streamlit/Dockerfile
-    image: face-recognition-webapp  # ← name of the image
+    image: lucblanchard/face-recognition-webapp  # ← name of the image
     ports:
       - "8501:8501"
     depends_on:
