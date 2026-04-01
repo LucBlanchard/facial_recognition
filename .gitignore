@@ -1,7 +1,3 @@
-known_faces/
-known_embeddings.pkl
-*.pt
-*.pkl
 __pycache__/
 *.pyc
 .env
