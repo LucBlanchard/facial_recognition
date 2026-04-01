@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: facial-recognition-api-monitor   
+  labels: 
+    release: prom  # Match the label of your Prometheus instance as per helm release
+spec:
+  selector:
+    matchLabels:
+      app: model
+  namespaceSelector:
+    matchNames:
+      - default  # or your namespace
+  endpoints:
+    - port: "8000"  # or match name of your service port       path: /metrics
+      interval: 15s
