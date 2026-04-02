@@ -52,11 +52,4 @@ jobs:
           context: "."
           file: Dockerfile
 
-      - name: Build and push Streamlit image
-        uses: docker/build-push-action@v2
-        with:
-          context: ./streamlit
-          file: Dockerfile
-          push: true
-          tags: lucblanchard/face-recognition-webapp:{{github.sha}}
 
